@@ -1,0 +1,14 @@
+C:\Users\Арслан\Desktop\prog1\prog1\obj\Debug\net8.0\prog1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Арслан\Desktop\prog1\prog1\obj\Debug\net8.0\prog1.AssemblyInfoInputs.cache
+C:\Users\Арслан\Desktop\prog1\prog1\obj\Debug\net8.0\prog1.AssemblyInfo.cs
+C:\Users\Арслан\Desktop\prog1\prog1\obj\Debug\net8.0\prog1.csproj.CoreCompileInputs.cache
+C:\Users\Арслан\Desktop\prog1\prog1\bin\Debug\net8.0\prog1.exe
+C:\Users\Арслан\Desktop\prog1\prog1\bin\Debug\net8.0\prog1.deps.json
+C:\Users\Арслан\Desktop\prog1\prog1\bin\Debug\net8.0\prog1.runtimeconfig.json
+C:\Users\Арслан\Desktop\prog1\prog1\bin\Debug\net8.0\prog1.dll
+C:\Users\Арслан\Desktop\prog1\prog1\bin\Debug\net8.0\prog1.pdb
+C:\Users\Арслан\Desktop\prog1\prog1\obj\Debug\net8.0\prog1.dll
+C:\Users\Арслан\Desktop\prog1\prog1\obj\Debug\net8.0\refint\prog1.dll
+C:\Users\Арслан\Desktop\prog1\prog1\obj\Debug\net8.0\prog1.pdb
+C:\Users\Арслан\Desktop\prog1\prog1\obj\Debug\net8.0\prog1.genruntimeconfig.cache
+C:\Users\Арслан\Desktop\prog1\prog1\obj\Debug\net8.0\ref\prog1.dll
