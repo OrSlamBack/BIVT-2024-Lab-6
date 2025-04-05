@@ -20,7 +20,7 @@ namespace MainProject
             public string club => Club;
             public double firstjump => FirstJump;
             public double secondjump => SecondJump;
-            public double JumpSum { get { return FirstJump + SecondJump; } }
+            public double BestJump { get { return Math.Max(FirstJump, SecondJump); } }
             public Participant(string _Surname, string _Club)
             {
                 Surname = _Surname;
