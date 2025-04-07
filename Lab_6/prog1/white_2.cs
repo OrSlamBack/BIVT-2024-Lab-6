@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,18 +13,18 @@ namespace Lab_6
     {
         public struct Participant
         {
-            private string surname, club;
+            private string surname, name;
             private double firstJump, secondJump;
-            public string Surname { get { return surname; } }
+            public string Name { get { return name; } }
             public string Club { get { return club; } }
             public double FirstJump { get { return firstJump; } }
             public double SecondJump { get { return secondJump; } }
 
             public double BestJump { get { return Math.Max(FirstJump, SecondJump); } }
-            public Participant(string _Surname, string _Club)
+            public Participant(string _Surname, string _Name)
             {
                 surname = _Surname;
-                club = _Club;
+                name = _Club;
                 firstJump = 0; secondJump = 0;
             }
             public void Jump(double result)
