@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,10 +52,10 @@ namespace Lab_6
         };
         public struct Team
         {
-            private string Name;
-            private Match[] Matches;
-            public string name => Name;
-            public Match[] matches => Matches;
+            private string name;
+            private Match[] matches;
+            public string Name => name;
+            public Match[] Matches => matches;
             public int TotalDifference
             {
                 get
@@ -94,7 +94,7 @@ namespace Lab_6
                 }
                 Matches[t.Length + 1] = new Match(goals, misses);
             }
-            public static void Sort(Team[] array)
+            public static void SortTeams(Team[] array)
             {
                 if(array == null)
                 {
