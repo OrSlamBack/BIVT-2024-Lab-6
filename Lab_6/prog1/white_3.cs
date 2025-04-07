@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,11 +50,11 @@ namespace Lab_6
                 }
                 Marks[t.Length] = mark;
             }
-            public Student(string _Surname, string _Name, int _Skipped)
+            public Student(string _Surname, string _Name)
             {
                 surname = _Surname;
                 name = _Name;
-                skipped = _Skipped;
+                skipped = 0;
                 marks = new double[0];
             }
             public void Print()
