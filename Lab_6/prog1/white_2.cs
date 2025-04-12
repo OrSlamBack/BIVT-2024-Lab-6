@@ -16,7 +16,7 @@ namespace Lab_6
             private string surname, name;
             private double firstJump, secondJump;
             public string Name { get { return name; } }
-            public string Club { get { return club; } }
+            public string Surname { get { return surname; } }
             public double FirstJump { get { return firstJump; } }
             public double SecondJump { get { return secondJump; } }
 
@@ -24,7 +24,7 @@ namespace Lab_6
             public Participant(string _Surname, string _Name)
             {
                 surname = _Surname;
-                name = _Club;
+                name = _Name;
                 firstJump = 0; secondJump = 0;
             }
             public void Jump(double result)
@@ -40,10 +40,10 @@ namespace Lab_6
             }
             public void Print()
             {
-                if (Surname == null || Club == null) return;
+                if (Surname == null || Name == null) return;
                 Console.Write(Surname);
                 Console.Write(" ");
-                Console.Write(Club);
+                Console.Write(Name);
                 Console.Write(" ");
                 Console.Write(FirstJump);
                 Console.Write(" ");
