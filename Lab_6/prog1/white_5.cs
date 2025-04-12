@@ -81,18 +81,18 @@ namespace Lab_6
                 }
             }
             public Team(string _name) { 
-                Name = _name;
-                Matches = new Match[0];
+                name = _name;
+                matches = new Match[0];
             }
             public void PlayMatch(int goals, int misses)
             {
                 Match[] t = Matches;
-                Matches = new Match[t.Length + 1];
+                matches = new Match[t.Length + 1];
                 for (int i = 0; i < t.Length; i++)
                 {
-                    Matches[i] = t[i];
+                    matches[i] = t[i];
                 }
-                Matches[t.Length + 1] = new Match(goals, misses);
+                matches[t.Length + 1] = new Match(goals, misses);
             }
             public static void SortTeams(Team[] array)
             {
