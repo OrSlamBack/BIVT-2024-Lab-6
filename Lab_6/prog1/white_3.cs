@@ -44,7 +44,7 @@ namespace Lab_6
                 }
                 double[] t = Marks;
                 marks = new double[t.Length+1];
-                for(int i =  t.Length; i < t.Length; i++)
+                for(int i =  0; i < t.Length; i++)
                 {
                     Marks[i] = t[i];
                 }
@@ -60,15 +60,11 @@ namespace Lab_6
             public void Print()
             {
                 if (surname == null || name == null || marks == null) return;
-                Console.Write(Surname);
+                Console.Write(Name);
                 Console.Write(" ");
-                Console.WriteLine(Name);
+                Console.Write(AvgMark);
+                Console.Write(" ");
                 Console.WriteLine(Skipped);
-                Console.Write("Marks : ");
-                for(int i = 0;i < marks.Length; i++)
-                {
-                    Console.Write(marks[i]+" ");
-                }
             }
             public static void SortBySkipped(Student[] array)
             {
