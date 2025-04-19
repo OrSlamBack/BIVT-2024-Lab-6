@@ -41,9 +41,9 @@ namespace Lab_6
             public void Print()
             {
                 if (Surname == null || Name == null) return;
-                Console.Write(Surname);
-                Console.Write(" ");
                 Console.Write(Name);
+                Console.Write(" ");
+                Console.Write(Surname);
                 Console.Write(" ");
                 Console.Write(FirstJump);
                 Console.Write(" ");
