@@ -86,13 +86,13 @@ namespace Lab_6
             }
             public void PlayMatch(int goals, int misses)
             {
-                Match[] t = Matches;
+                Match[] t = matches;
                 matches = new Match[t.Length + 1];
                 for (int i = 0; i < t.Length; i++)
                 {
                     matches[i] = t[i];
                 }
-                matches[t.Length + 1] = new Match(goals, misses);
+                matches[t.Length] = new Match(goals, misses);
             }
             public static void SortTeams(Team[] array)
             {
@@ -115,12 +115,11 @@ namespace Lab_6
             {
                 if (Name == null) return;
                 if(Matches == null) return;
-                Console.WriteLine(Name);
-                Console.WriteLine($"Количество матчей {Matches.Length}");
-                Console.WriteLine("Результаты матчей");
-                for (int i = 0; i < Matches.Length; i++) {
-                    Matches[i].Print();
-                }
+                Console.Write(Name);
+                Console.Write(" ");
+                Console.Write(TotalScore);
+                Console.Write(" ");
+                Console.WriteLine(TotalDifference);
             }
         };
 
