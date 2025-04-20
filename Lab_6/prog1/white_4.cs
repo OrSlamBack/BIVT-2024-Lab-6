@@ -6,67 +6,56 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-
 namespace Lab_6
 {
-    public class White_3
+    public class White_4
     {
-        public struct Student
+        public struct Participant
         {
             private string surname, name;
-            private int skipped;
-            private double[] marks;
+
+            private double[] scores;
             public string Surname => surname;
             public string Name => name;
-            public int Skipped { get { return skipped; } }
-            public double[] Marks => marks;
-            public double AvgMark{
+            public double[] Scores => scores;
+            public double TotalScore
+            {
                 get
                 {
-                    if (Marks.Length == 0)
-                    {
-                        return 0;
-                    }
                     double sum = 0;
-                    for (int i = 0; i < Marks.Length; i++)
+                    for (int i = 0; i < Scores.Length; i++)
                     {
-                        sum += Marks[i];
+                        sum += Scores[i];
                     }
-                    return sum / ((double)(Marks.Length));
+                    return sum;
                 }
             }
-            public void Lesson(int mark)
+            public void PlayMatch(double result)
             {
-                if (mark == 0)
+                double[] t = scores;
+                scores = new double[t.Length+1];
+                for(int i = 0;i < t.Length; i++)
                 {
-                    skipped++;
-                    return;
+                    scores[i] = t[i];
                 }
-                double[] t = Marks;
-                marks = new double[t.Length+1];
-                for(int i =  0; i < t.Length; i++)
-                {
-                    Marks[i] = t[i];
-                }
-                Marks[t.Length] = mark;
+                scores[t.Length] = result;
             }
-            public Student(string _Surname, string _Name)
+            public Participant(string _Surname, string _Name)
             {
                 surname = _Surname;
                 name = _Name;
-                skipped = 0;
-                marks = new double[0];
+                scores = new double[0];
             }
             public void Print()
             {
-                if (surname == null || name == null || marks == null) return;
+                if(Surname == null ||  Name == null || Scores == null) return;
                 Console.Write(Name);
                 Console.Write(" ");
-                Console.Write(AvgMark);
+                Console.Write(Surname);
                 Console.Write(" ");
-                Console.WriteLine(Skipped);
+                Console.WriteLine(TotalScore);
             }
-            public static void SortBySkipped(Student[] array)
+            public static void Sort(Participant[] array)
             {
                 if (array == null)
                 {
@@ -76,14 +65,14 @@ namespace Lab_6
                 {
                     for (int j = i + 1; j < array.Length; j++)
                     {
-                        if (array[j].Skipped > array[i].Skipped)
+                        if (array[j].TotalScore > array[i].TotalScore)
                         {
                             (array[i], array[j]) = (array[j], array[i]);
                         }
                     }
                 }
             }
-
+                
         };
 
     }
