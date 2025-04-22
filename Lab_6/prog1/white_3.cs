@@ -50,7 +50,14 @@ namespace Lab_6
                 }
                 Marks[t.Length] = mark;
             }
-            public Student(string _Surname, string _Name)
+            public Student(string _Name, string _Surname)
+            {
+                surname = _Surname;
+                name = _Name;
+                skipped = 0;
+                marks = new double[0];
+            }
+            public void Student_(string _Name, string _Surname)
             {
                 surname = _Surname;
                 name = _Name;
@@ -61,6 +68,8 @@ namespace Lab_6
             {
                 if (surname == null || name == null || marks == null) return;
                 Console.Write(Name);
+                Console.Write(" ");
+                Console.Write(Surname);
                 Console.Write(" ");
                 Console.Write(AvgMark);
                 Console.Write(" ");
