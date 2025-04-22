@@ -40,7 +40,7 @@ namespace Lab_6
                 }
                 scores[t.Length] = result;
             }
-            public Participant(string _Surname, string _Name)
+            public Participant(string _Name, string _Surname)
             {
                 surname = _Surname;
                 name = _Name;
