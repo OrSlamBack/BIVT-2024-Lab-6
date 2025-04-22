@@ -60,10 +60,14 @@ namespace Lab_6
             {
                 get
                 {
-                    int res = 0;
-                    for(int i = 0;i < Matches.Length; i++)
+                    if(matches== null || matches.Length == 0)
                     {
-                        res += Matches[i].Difference;
+                        return 0;
+                    }
+                    int res = 0;
+                    for(int i = 0;i < matches.Length; i++)
+                    {
+                        res += matches[i].Difference;
                     }
                     return res;
                 }
@@ -72,10 +76,14 @@ namespace Lab_6
             {
                 get
                 {
-                    int res = 0;
-                    for (int i = 0; i < Matches.Length; i++)
+                    if(matches == null || matches.Length==0)
                     {
-                        res += Matches[i].Score;
+                        return 0;
+                    }
+                    int res = 0;
+                    for (int i = 0; i < matches.Length; i++)
+                    {
+                        res += matches[i].Score;
                     }
                     return res;
                 }
