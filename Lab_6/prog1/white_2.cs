@@ -20,26 +20,40 @@ namespace Lab_6
             public double FirstJump { get { return firstJump; } }
             public double SecondJump { get { return secondJump; } }
 
-            public double BestJump { get { return Math.Max(FirstJump, SecondJump); } }
+            public double BestJump 
+            { 
+                get 
+                { 
+                    if(firstJump == -1 && secondJump == -1)
+                    {
+                        return 0;
+                    }
+                    return Math.Max(FirstJump, SecondJump); 
+                } 
+            }
             public Participant(string _Name,string _Surname)
             {
                 surname = _Surname;
                 name = _Name;
-                firstJump = 0; secondJump = 0;
+                firstJump = -1; secondJump = -1;
             }
             public void Participant_(string _Name, string _Surname)
             {
                 surname = _Surname;
                 name = _Name;
-                firstJump = 0; secondJump = 0;
+                firstJump = -1; secondJump = -1;
             }
             public void Jump(double result)
             {
-                if (FirstJump == 0)
+                if(result < 0)
+                {
+                    return;
+                }
+                if (FirstJump == -1)
                 {
                     firstJump = result;
                 }
-                else if (SecondJump == 0)
+                else if (SecondJump == -1)
                 {
                     secondJump = result;
                 }
