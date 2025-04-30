@@ -14,31 +14,38 @@ namespace Lab_6
         {
             private string surname, name;
 
-            private double[] scores;
+            private double[] scores = new double[0];
             public string Surname => surname;
             public string Name => name;
-            public double[] Scores => scores;
+            public IReadOnlyCollection<double> Scores => Array.AsReadOnly(scores);
             public double TotalScore
             {
                 get
                 {
-                    double sum = 0;
-                    for (int i = 0; i < Scores.Length; i++)
+                    if(Scores == null)
                     {
-                        sum += Scores[i];
+                        return 0;
+                    }
+                    double sum = 0;
+                    for (int i = 0; i < scores.Length; i++)
+                    {
+                        sum += scores[i];
                     }
                     return sum;
                 }
             }
             public void PlayMatch(double result)
             {
-                double[] t = scores;
-                scores = new double[t.Length+1];
-                for(int i = 0;i < t.Length; i++)
+                if (result == 0 || result == 0.5 || result == 1)
                 {
-                    scores[i] = t[i];
+                    double[] t = scores;
+                    scores = new double[t.Length + 1];
+                    for (int i = 0; i < t.Length; i++)
+                    {
+                        scores[i] = t[i];
+                    }
+                    scores[t.Length] = result;
                 }
-                scores[t.Length] = result;
             }
             public Participant(string _Name, string _Surname)
             {
