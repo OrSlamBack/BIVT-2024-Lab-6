@@ -55,7 +55,7 @@ namespace Lab_6
             private string name;
             private Match[] matches;
             public string Name => name;
-            public Match[] Matches => matches;
+            public IReadOnlyCollection<Match> Matches => Array.AsReadOnly(matches);
             public int TotalDifference
             {
                 get
@@ -115,6 +115,13 @@ namespace Lab_6
                         if (array[j].TotalScore > array[i].TotalScore)
                         {
                             (array[i], array[j]) = (array[j], array[i]);
+                        }
+                        if(array[j].TotalScore == array[i].TotalScore)
+                        {
+                            if(array[j].TotalDifference > array[i].TotalDifference)
+                            {
+                                (array[i], array[j]) = (array[j], array[i]);
+                            }
                         }
                     }
                 }
