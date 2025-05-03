@@ -17,7 +17,17 @@ namespace Lab_6
             private double[] scores = new double[0];
             public string Surname => surname;
             public string Name => name;
-            public IReadOnlyCollection<double> Scores => Array.AsReadOnly(scores);
+            public double[] Scores
+            {
+                get
+                {
+                    if (scores == null) return default(double[]);
+                    double[] _scores = new double[scores.Length];
+                    Array.Copy(scores, _scores, scores.Length);
+                    // for (int i = 0; i < _marks.Length; i++) marks[i] = _marks[i];
+                    return _scores;
+                }
+            }
             public double TotalScore
             {
                 get
