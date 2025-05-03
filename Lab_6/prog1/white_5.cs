@@ -55,7 +55,17 @@ namespace Lab_6
             private string name;
             private Match[] matches;
             public string Name => name;
-            public IReadOnlyCollection<Match> Matches => Array.AsReadOnly(matches);
+            public Match[] Matches
+            {
+                get
+                {
+                    if (matches == null) return default(Match[]);
+                    Match[] _matches = new Match[matches.Length];
+                    Array.Copy(matches, _matches, matches.Length);
+                    
+                    return _matches;
+                }
+            }
             public int TotalDifference
             {
                 get
