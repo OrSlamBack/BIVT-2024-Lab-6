@@ -24,7 +24,7 @@ namespace Lab_6
             { 
                 get 
                 { 
-                    if(firstJump == -1 && secondJump == -1)
+                    if(firstJump == 0 && secondJump == 0)
                     {
                         return 0;
                     }
@@ -35,25 +35,20 @@ namespace Lab_6
             {
                 surname = _Surname;
                 name = _Name;
-                firstJump = -1; secondJump = -1;
+                firstJump = 0; secondJump = 0;
             }
-            public void Participant_(string _Name, string _Surname)
-            {
-                surname = _Surname;
-                name = _Name;
-                firstJump = -1; secondJump = -1;
-            }
+
             public void Jump(double result)
             {
                 if(result < 0)
                 {
                     return;
                 }
-                if (FirstJump == -1)
+                if (firstJump == 0)
                 {
                     firstJump = result;
                 }
-                else if (SecondJump == -1)
+                else if (secondJump == 0)
                 {
                     secondJump = result;
                 }
