@@ -32,7 +32,7 @@ namespace Lab_6
             {
                 get
                 {
-                    if(Scores == null)
+                    if(scores == null)
                     {
                         return 0;
                     }
@@ -48,6 +48,10 @@ namespace Lab_6
             {
                 if (result == 0 || result == 0.5 || result == 1)
                 {
+                    if(scores == null)
+                    {
+                        scores = new double[0];
+                    }
                     double[] t = scores;
                     scores = new double[t.Length + 1];
                     for (int i = 0; i < t.Length; i++)
