@@ -15,13 +15,17 @@ namespace Lab_6
         {
             private string surname, name;
             private int skipped = 0;
-            private double[] Marks = new double[0];
+            private double[] Marks;
             public string Surname => surname;
             public string Name => name;
             public int Skipped { get { return skipped; } }
             public double AvgMark{
                 get
                 {
+                    if(Marks == null)
+                    {
+                        return 0;
+                    }
                     if (Marks.Length == 0)
                     {
                         return 0;
@@ -36,7 +40,11 @@ namespace Lab_6
             }
             public void Lesson(int mark)
             {
-                
+                if (Marks == null)
+                {
+                    Marks = new double[0];
+                }
+
                 if (mark == 0)
                 {
                     skipped++;
@@ -60,13 +68,7 @@ namespace Lab_6
                 skipped = 0;
                 Marks = new double[0];
             }
-            public void Student_(string _Name, string _Surname)
-            {
-                surname = _Surname;
-                name = _Name;
-                skipped = 0;
-                Marks = new double[0];
-            }
+
             public void Print()
             {
                 if (surname == null || name == null) return;
