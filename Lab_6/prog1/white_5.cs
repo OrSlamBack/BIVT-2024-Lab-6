@@ -70,7 +70,11 @@ namespace Lab_6
             {
                 get
                 {
-                    if(matches== null || matches.Length == 0)
+                    if(matches == null)
+                    {
+                        matches = new Match[0];
+                    }
+                    if(matches.Length == 0)
                     {
                         return 0;
                     }
@@ -86,7 +90,11 @@ namespace Lab_6
             {
                 get
                 {
-                    if(matches == null || matches.Length==0)
+                    if (matches == null)
+                    {
+                        matches = new Match[0];
+                    }
+                    if (matches.Length==0)
                     {
                         return 0;
                     }
