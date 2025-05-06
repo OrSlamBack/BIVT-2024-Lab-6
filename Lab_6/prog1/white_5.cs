@@ -104,6 +104,10 @@ namespace Lab_6
             }
             public void PlayMatch(int goals, int misses)
             {
+                if(matches == null)
+                {
+                    matches = new Match[0];
+                }
                 Match[] t = matches;
                 matches = new Match[t.Length + 1];
                 for (int i = 0; i < t.Length; i++)
