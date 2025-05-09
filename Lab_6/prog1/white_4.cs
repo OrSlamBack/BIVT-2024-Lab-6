@@ -82,13 +82,17 @@ namespace Lab_6
                 {
                     return;
                 }
-                for (int i = 0; i < array.Length; i++)
+                for (int i = 1; i < array.Length; i++)
                 {
-                    for (int j = i + 1; j < array.Length; j++)
+                    for (int j = i; j - 1 >= 0; j--)
                     {
-                        if (array[j].TotalScore > array[i].TotalScore)
+                        if (array[j].TotalScore > array[j - 1].TotalScore)
                         {
-                            (array[i], array[j]) = (array[j], array[i]);
+                            (array[j], array[j - 1]) = (array[j - 1], array[j]);
+                        }
+                        else
+                        {
+                            break;
                         }
                     }
                 }
