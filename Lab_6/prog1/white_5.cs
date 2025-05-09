@@ -72,7 +72,7 @@ namespace Lab_6
                 {
                     if(matches == null)
                     {
-                        matches = new Match[0];
+                        return 0;
                     }
                     if(matches.Length == 0)
                     {
@@ -92,7 +92,7 @@ namespace Lab_6
                 {
                     if (matches == null)
                     {
-                        matches = new Match[0];
+                        return 0;
                     }
                     if (matches.Length==0)
                     {
@@ -132,18 +132,19 @@ namespace Lab_6
                 }
                 for (int i = 0; i < array.Length; i++)
                 {
-                    for (int j = i + 1; j < array.Length; j++)
+                    for (int j = i; j - 1 >= 0; j--)
                     {
                         if (array[j].TotalScore > array[i].TotalScore)
                         {
                             (array[i], array[j]) = (array[j], array[i]);
                         }
-                        if(array[j].TotalScore == array[i].TotalScore)
+                        else if(array[j].TotalScore == array[i].TotalScore && array[j].TotalDifference > array[i].TotalDifference)
                         {
-                            if(array[j].TotalDifference > array[i].TotalDifference)
-                            {
-                                (array[i], array[j]) = (array[j], array[i]);
-                            }
+                              (array[i], array[j]) = (array[j], array[i]);
+                        }
+                        else
+                        {
+                            break;
                         }
                     }
                 }
