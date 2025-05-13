@@ -59,11 +59,7 @@ namespace Lab_6
             {
                 get
                 {
-                    if (matches == null) return default(Match[]);
-                    Match[] _matches = new Match[matches.Length];
-                    Array.Copy(matches, _matches, matches.Length);
-                    
-                    return _matches;
+                    return matches;
                 }
             }
             public int TotalDifference
@@ -134,13 +130,13 @@ namespace Lab_6
                 {
                     for (int j = i; j - 1 >= 0; j--)
                     {
-                        if (array[j].TotalScore > array[i].TotalScore)
+                        if (array[j].TotalScore > array[j-1].TotalScore)
                         {
-                            (array[i], array[j]) = (array[j], array[i]);
+                            (array[j], array[j-1]) = (array[j-1], array[j]);
                         }
-                        else if(array[j].TotalScore == array[i].TotalScore && array[j].TotalDifference > array[i].TotalDifference)
+                        else if(array[j].TotalScore == array[j-1].TotalScore && array[j].TotalDifference > array[j-1].TotalDifference)
                         {
-                              (array[i], array[j]) = (array[j], array[i]);
+                              (array[j], array[j-1]) = (array[j -1], array[j]);
                         }
                         else
                         {
